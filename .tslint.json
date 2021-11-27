@@ -1,0 +1,13 @@
+{
+    "rulesDirectory": ["tslint-plugin-prettier"],
+    "rules": {
+      "prettier": true,
+      "react-hooks-nesting": "error"
+    },
+    "extends": [
+      "eslint:recommended",
+      "@typescript-eslint/eslint-plugin",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "tslint-react-hooks"
+  ]
+  }

@@ -1,0 +1,27 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react-hooks/recommended",
+      // "airbnb",
+      "prettier"
+    ],
+    "rules": {
+          "react/jsx-filename-extension": [
+              1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      ],
+      // "react/function-component-definition": [1, {
+      //   "namedComponents": "function-declaration" | "function-expression" | "arrow-function",
+      //   "unnamedComponents": "function-expression" | "arrow-function"
+      // }],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+      },
+  }
