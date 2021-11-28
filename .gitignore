@@ -1,2 +1,11 @@
 node_modules
 .next
+dist
+
+
+
+.vscode
+.idea
+
+
+yarn-error.log
