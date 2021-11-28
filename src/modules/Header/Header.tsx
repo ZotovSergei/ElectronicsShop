@@ -1,4 +1,4 @@
-import Navigation from 'modules/Navigation';
+import Navigation from "modules/Navigation";
 
 const Header = () => {
   return (
