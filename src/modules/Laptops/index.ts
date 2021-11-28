@@ -1,1 +1,1 @@
-export { default } from './Laptops'
+export { default } from './Laptops';

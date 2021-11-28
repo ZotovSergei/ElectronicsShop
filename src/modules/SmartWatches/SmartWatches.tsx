@@ -1,7 +1,5 @@
-import React from 'react'
-
 const SmartWatches = () => {
-	return <div>SmartWatches</div>
-}
+  return <div>SmartWatches</div>;
+};
 
-export default SmartWatches
+export default SmartWatches;

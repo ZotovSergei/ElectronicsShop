@@ -1,13 +1,15 @@
-import Container from '@mui/material/Container'
-import type { AppProps } from 'next/app'
-import React from 'react'
+import Container from '@mui/material/Container';
+import type { AppProps } from 'next/app';
+import { IntlProvider } from 'react-intl';
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return (
-		<Container>
-			<Component {...pageProps} />
-		</Container>
-	)
+  return (
+    <Container>
+      <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
+        <Component {...pageProps} />
+      </IntlProvider>
+    </Container>
+  );
 }
 
-export default MyApp
+export default MyApp;

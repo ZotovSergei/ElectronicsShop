@@ -1,11 +1,10 @@
-import Navigation from 'modules/Navigation'
-import React from 'react'
+import Navigation from 'modules/Navigation';
 
 const Header = () => {
-	return (
-		<div>
-			<Navigation />
-		</div>
-	)
-}
-export default Header
+  return (
+    <div>
+      <Navigation />
+    </div>
+  );
+};
+export default Header;

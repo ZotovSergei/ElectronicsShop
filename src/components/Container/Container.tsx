@@ -1,2 +1,2 @@
-import { Container } from '@mui/material'
-export default Container
+import { Container } from '@mui/material';
+export default Container;
