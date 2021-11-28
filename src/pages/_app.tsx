@@ -5,7 +5,7 @@ import { IntlProvider } from 'react-intl';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Container>
-      <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
+      <IntlProvider locale='en' messages={{}} defaultLocale='en'>
         <Component {...pageProps} />
       </IntlProvider>
     </Container>

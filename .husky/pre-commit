@@ -2,5 +2,7 @@
 . "$(dirname "$0")/_/husky.sh"
 . "$(dirname "$0")/common.sh"
 
-yarn eslint --fix
+yarn tsc
+yarn eslint --fix src/
 yarn format
+# yarn tsc --noEmit

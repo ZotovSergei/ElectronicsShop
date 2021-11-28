@@ -12,17 +12,6 @@
     "format": "yarn prettier --write --ignore-path \"./.prettierignore\" .",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
