@@ -1,1 +1,1 @@
-export { default } from 'modules/Tablets';
+export { default } from "modules/Tablets";

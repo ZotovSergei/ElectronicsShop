@@ -1,2 +1,2 @@
-import { Tab } from '@mui/material';
+import { Tab } from "@mui/material";
 export default Tab;

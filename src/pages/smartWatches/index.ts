@@ -1,1 +1,1 @@
-export { default } from 'modules/SmartWatches';
+export { default } from "modules/SmartWatches";

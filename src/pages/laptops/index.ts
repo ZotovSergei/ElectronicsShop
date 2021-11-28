@@ -1,1 +1,1 @@
-export { default } from '../../modules/Laptops';
+export { default } from "../../modules/Laptops";

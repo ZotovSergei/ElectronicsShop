@@ -1,6 +1,6 @@
-import Header from 'modules/Header';
-import Head from 'next/head';
-import Main from '../modules/Main';
+import Header from "modules/Header";
+import Head from "next/head";
+import Main from "../modules/Main";
 
 const Home = () => {
   return (

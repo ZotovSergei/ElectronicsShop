@@ -1,1 +1,1 @@
-export { default } from '../../modules/SmartPhones';
+export { default } from "../../modules/SmartPhones";
