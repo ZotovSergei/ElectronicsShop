@@ -1,9 +1,8 @@
-import { Tabs, Tab, Typography, Grid } from "components";
+import { Tabs, Tab, Typography, Grid, AppBar } from "components";
 
 import { useRouter } from "next/router";
 
 import React, { useState } from "react";
-import { StyledAppBar } from "./styled";
 
 const Navigation = () => {
   const [selectedTab, setSelectedTab] = useState<string>("laptops");
@@ -15,7 +14,7 @@ const Navigation = () => {
   };
 
   return (
-    <StyledAppBar position='static' color='transparent'>
+    <AppBar position='static'>
       <Grid container></Grid>
       <Grid container justifyContent='flex-end'>
         <Tabs
@@ -43,7 +42,7 @@ const Navigation = () => {
           />
         </Tabs>
       </Grid>
-    </StyledAppBar>
+    </AppBar>
   );
 };
 
