@@ -1,1 +1,1 @@
-export {default} from './AuthorizedLayout'
+export { default } from "./AuthorizedLayout";

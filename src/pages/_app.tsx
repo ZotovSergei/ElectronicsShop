@@ -5,11 +5,14 @@ import type { AppProps } from "next/app";
 import { IntlProvider } from "react-intl";
 import intlEn from "../i18n/en.json";
 import Layout from "../modules/Layout";
+import { ThemeOptions, ThemeProvider } from "@mui/material/styles";
+import { useCustomTheme } from "utils/hooks/useTheme";
 // import intlRu from '../i18n/ru.json';
 
 interface Config {
   Layout?: string;
   disableGutters?: boolean;
+  Theme?: ThemeOptions;
 }
 
 type NextPageWithLayout = NextPage & {
@@ -32,13 +35,15 @@ const getLayout = (layout: string) => {
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const LayoutComponent = getLayout(Component.config?.Layout || "") ?? <></>;
-
+  const theme = useCustomTheme(Component.config?.Theme);
   return (
     <Container disableGutters={Component.config?.disableGutters ?? false}>
       <IntlProvider locale='en' messages={intlEn} defaultLocale='en'>
-        <LayoutComponent>
-          <Component {...pageProps} />
-        </LayoutComponent>
+        <ThemeProvider theme={theme}>
+          <LayoutComponent>
+            <Component {...pageProps} />
+          </LayoutComponent>
+        </ThemeProvider>
       </IntlProvider>
     </Container>
   );

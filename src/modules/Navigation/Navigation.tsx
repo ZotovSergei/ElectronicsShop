@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Navigation = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("laptops");
+  const [selectedTab, setSelectedTab] = useState<string | null>(null);
   const router = useRouter();
 
   const handleChange = (event: React.SyntheticEvent, value: string) => {
