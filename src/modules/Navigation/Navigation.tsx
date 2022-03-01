@@ -1,48 +1,51 @@
-import { Tabs, Tab, Typography, Grid, AppBar } from "components";
+import { Grid, IconButton } from "@mui/material";
+import { Tabs } from "components";
+import useDeviceType from "utils/hooks/useDeviceType";
+import { ITabs } from "utils/typings";
+import { StyledGrid, StyledNavigationLogo } from "./styled";
+import MenuIcon from "@mui/icons-material/Menu";
 
-import { useRouter } from "next/router";
-
-import React, { useState } from "react";
+const tabs: ITabs[] = [
+  {
+    value: "laptops",
+    labelIntlId: "navigation.laptops",
+  },
+  {
+    value: "smartPhones",
+    labelIntlId: "navigation.smartPhones",
+  },
+  {
+    value: "tablets",
+    labelIntlId: "navigation.tablets",
+  },
+  {
+    value: "smartWatches",
+    labelIntlId: "navigation.smartWatches",
+  },
+];
 
 const Navigation = () => {
-  const [selectedTab, setSelectedTab] = useState<string | null>(null);
-  const router = useRouter();
-
-  const handleChange = (event: React.SyntheticEvent, value: string) => {
-    setSelectedTab(value);
-    router.push(`/${value}`, undefined, { shallow: true });
-  };
-
+  const { isDesktop } = useDeviceType();
   return (
-    <AppBar position='static'>
-      <Grid container></Grid>
-      <Grid container justifyContent='flex-end'>
-        <Tabs
-          value={selectedTab}
-          onChange={handleChange}
-          textColor='secondary'
-          indicatorColor='secondary'
-          aria-label='secondary tabs example'
-        >
-          <Tab
-            value={"laptops"}
-            label={<Typography intlId='navigation.laptops' />}
+    <Grid
+      container
+      justifyContent={isDesktop ? "flex-end" : "flex-start"}
+      alignItems='center'
+    >
+      {isDesktop ? (
+        <Tabs tabs={tabs} />
+      ) : (
+        <>
+          <IconButton>
+            <MenuIcon />
+          </IconButton>
+          <StyledNavigationLogo
+            intlId='common.logo'
+            style={{ margin: "0 auto" }}
           />
-          <Tab
-            value={"smartPhones"}
-            label={<Typography intlId='navigation.smartPhones' />}
-          />
-          <Tab
-            value={"tablets"}
-            label={<Typography intlId='navigation.tablets' />}
-          />
-          <Tab
-            value={"smartWatches"}
-            label={<Typography intlId='navigation.smartWatches' />}
-          />
-        </Tabs>
-      </Grid>
-    </AppBar>
+        </>
+      )}
+    </Grid>
   );
 };
 
