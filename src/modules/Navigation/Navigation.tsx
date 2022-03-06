@@ -1,8 +1,8 @@
-import { Grid, IconButton } from "@mui/material";
-import { Tabs } from "components";
+import { IconButton } from "@mui/material";
+import { Tabs, Typography } from "components";
 import useDeviceType from "utils/hooks/useDeviceType";
 import { ITabs } from "utils/typings";
-import { StyledGrid, StyledNavigationLogo } from "./styled";
+import { StyledGrid } from "./styled";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const tabs: ITabs[] = [
@@ -27,7 +27,7 @@ const tabs: ITabs[] = [
 const Navigation = () => {
   const { isDesktop } = useDeviceType();
   return (
-    <Grid
+    <StyledGrid
       container
       justifyContent={isDesktop ? "flex-end" : "flex-start"}
       alignItems='center'
@@ -39,13 +39,14 @@ const Navigation = () => {
           <IconButton>
             <MenuIcon />
           </IconButton>
-          <StyledNavigationLogo
+          <Typography
             intlId='common.logo'
+            // TODO: Добавил из-за веса стилей, styled-components не срабатывает после обновления страницы
             style={{ margin: "0 auto" }}
           />
         </>
       )}
-    </Grid>
+    </StyledGrid>
   );
 };
 
