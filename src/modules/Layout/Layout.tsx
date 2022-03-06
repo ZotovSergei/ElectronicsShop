@@ -2,13 +2,11 @@ import { Container } from "components";
 import Header from "modules/Header";
 import Head from "next/head";
 import React from "react";
-import useDeviceType from "utils/hooks/useDeviceType";
 
 interface Props {
   children?: React.ReactNode;
 }
 const Layout = ({ children }: Props) => {
-  const { isDesktop } = useDeviceType();
   return (
     <>
       <Head>
