@@ -1,10 +1,11 @@
+import { AppBar } from "components";
 import Navigation from "modules/Navigation";
 
 const Header = () => {
   return (
-    <div>
+    <AppBar position='static'>
       <Navigation />
-    </div>
+    </AppBar>
   );
 };
 export default Header;

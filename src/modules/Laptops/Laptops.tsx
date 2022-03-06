@@ -6,5 +6,6 @@ const Laptops = () => {
 
 Laptops.config = {
   Theme: themeLaptops,
+  disableGutters: true,
 };
 export default Laptops;
