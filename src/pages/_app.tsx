@@ -7,7 +7,7 @@ import intlEn from "../i18n/en.json";
 import Layout from "../modules/Layout";
 import { ThemeOptions, ThemeProvider } from "@mui/material/styles";
 import { useCustomTheme } from "utils/hooks/useTheme";
-// import intlRu from '../i18n/ru.json';
+import "../style.css";
 
 interface Config {
   Layout?: string;
@@ -38,6 +38,8 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const theme = useCustomTheme(Component.config?.Theme);
   return (
     <Container disableGutters={Component.config?.disableGutters ?? false}>
+      {console.log(Component.config?.disableGutters)}
+      {console.log(Component)}
       <IntlProvider locale='en' messages={intlEn} defaultLocale='en'>
         <ThemeProvider theme={theme}>
           <LayoutComponent>
