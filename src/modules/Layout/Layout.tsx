@@ -1,4 +1,5 @@
 import { Container } from "components";
+import Footer from "modules/Footer";
 import Header from "modules/Header";
 import Head from "next/head";
 import React from "react";
@@ -16,7 +17,7 @@ const Layout = ({ children }: Props) => {
       <Container disableGutters={true}>
         <Header />
         <main>{children}</main>
-        <footer>Footer</footer>
+        <Footer />
       </Container>
     </>
   );

@@ -1,25 +1,30 @@
 import { IconButton } from "@mui/material";
-import { Tabs, Typography } from "components";
+import { Tabs } from "components";
 import useDeviceType from "utils/hooks/useDeviceType";
 import { ITabs } from "utils/typings";
-import { StyledGrid } from "./styled";
+import { StyledGrid, StyledLogo } from "./styled";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Routes } from "utils/enums/route";
 
 const tabs: ITabs[] = [
   {
-    value: "laptops",
+    value: Routes.Home,
+    labelIntlId: "navigation.home",
+  },
+  {
+    value: Routes.Laptops,
     labelIntlId: "navigation.laptops",
   },
   {
-    value: "smartPhones",
+    value: Routes.SmartPhones,
     labelIntlId: "navigation.smartPhones",
   },
   {
-    value: "tablets",
+    value: Routes.Tablets,
     labelIntlId: "navigation.tablets",
   },
   {
-    value: "smartWatches",
+    value: Routes.SmartWatches,
     labelIntlId: "navigation.smartWatches",
   },
 ];
@@ -39,11 +44,7 @@ const Navigation = () => {
           <IconButton>
             <MenuIcon />
           </IconButton>
-          <Typography
-            intlId='common.logo'
-            // TODO: Добавил из-за веса стилей, styled-components не срабатывает после обновления страницы
-            style={{ margin: "0 auto" }}
-          />
+          <StyledLogo intlId='common.logo' />
         </>
       )}
     </StyledGrid>
