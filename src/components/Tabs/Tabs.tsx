@@ -2,10 +2,11 @@ import { Tab, Tabs as MuiTabs } from "@mui/material";
 import { Typography } from "components/Typography";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
+import { Routes } from "utils/enums/route";
 import { i18nKeys, ListTabs } from "utils/typings";
 
 const Tabs: FC<ListTabs> = ({ tabs }) => {
-  const [selectedTab, setSelectedTab] = useState<string>("laptops");
+  const [selectedTab, setSelectedTab] = useState<string>(Routes.Home);
   const router = useRouter();
 
   const handleChange = (event: React.SyntheticEvent, value: string) => {
@@ -15,7 +16,9 @@ const Tabs: FC<ListTabs> = ({ tabs }) => {
 
   useEffect(() => {
     const { pathname } = router;
-    if (pathname) setSelectedTab(pathname.slice(1));
+    const url = pathname.slice(1);
+    if (url) setSelectedTab(url);
+    else setSelectedTab(Routes.Home);
   }, []);
 
   const listTabs = tabs.map(({ value, labelIntlId }) => {

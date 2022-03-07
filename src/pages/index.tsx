@@ -1,14 +1,14 @@
-import Main from "../modules/Main";
+import Home from "modules/Home";
 
-const Home = () => {
+const Main = () => {
   return (
     <>
-      <Main />
+      <Home />
     </>
   );
 };
 
-Home.config = {
-  Layout: "Unauthorized",
-};
-export default Home;
+// Main.config = {
+//   Layout: "Unauthorized",
+// };
+export default Main;
