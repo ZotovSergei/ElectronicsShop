@@ -1,6 +1,6 @@
-import { Typography } from "components";
+import { Drawer, Typography } from "components";
 import { Grid } from "components/Grid";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledGrid = styled(Grid)`
   height: 48px;
@@ -9,4 +9,11 @@ export const StyledGrid = styled(Grid)`
 `;
 export const StyledLogo = styled(Typography)`
   margin: 0 auto;
+`;
+
+export const StyledDrawer = styled(Drawer)<{ $isTablet: boolean }>`
+  [class*="MuiDrawer-paper"] {
+    border: none;
+    width: ${({ $isTablet }) => ($isTablet ? "50vw" : "100vw")};
+  }
 `;

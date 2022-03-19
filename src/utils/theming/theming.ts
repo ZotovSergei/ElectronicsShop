@@ -21,3 +21,15 @@ export const themeSmartPhones: ThemeOptions = {
     },
   },
 };
+
+export const defaultTheme: ThemeOptions = {
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 1280,
+      lg: 1440,
+      xl: 2150,
+    },
+  },
+};

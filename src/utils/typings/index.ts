@@ -6,6 +6,3 @@ export interface ITabs {
   value: string;
   labelIntlId: string;
 }
-export interface ListTabs {
-  tabs: ITabs[];
-}
