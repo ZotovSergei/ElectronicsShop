@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/common.sh"
+
+yarn tsc
+yarn eslint --fix src/
+yarn format
+# yarn tsc --noEmit
