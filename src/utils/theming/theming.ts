@@ -1,5 +1,5 @@
 import { ThemeOptions } from "@mui/material/styles";
-
+export type ThemeType = typeof defaultTheme;
 export const themeLaptops: ThemeOptions = {
   palette: {
     primary: {
@@ -22,7 +22,7 @@ export const themeSmartPhones: ThemeOptions = {
   },
 };
 
-export const defaultTheme: ThemeOptions = {
+export const getDefaultThemeOptions = (): ThemeOptions => ({
   breakpoints: {
     values: {
       xs: 0,
@@ -32,4 +32,18 @@ export const defaultTheme: ThemeOptions = {
       xl: 2150,
     },
   },
-};
+  palette: {
+    primary: {
+      main: "#f511a9",
+    },
+    secondary: {
+      main: "#f511ed",
+    },
+  },
+});
+
+const makeDefaultTheme = () => getDefaultThemeOptions();
+export const defaultTheme = makeDefaultTheme();
+
+export type MakeTheme = typeof makeDefaultTheme;
+export default makeDefaultTheme;

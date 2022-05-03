@@ -8,6 +8,7 @@ import Layout from "../modules/Layout";
 import { ThemeOptions, ThemeProvider } from "@mui/material/styles";
 import { useCustomTheme } from "utils/hooks/useTheme";
 import "../style.css";
+import { StyledEngineProvider } from "@mui/material";
 
 interface Config {
   Layout?: string;
@@ -38,13 +39,15 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const theme = useCustomTheme(Component.config?.Theme);
   return (
     <Container disableGutters={Component.config?.disableGutters ?? false}>
-      <IntlProvider locale='en' messages={intlEn} defaultLocale='en'>
-        <ThemeProvider theme={theme}>
-          <LayoutComponent>
-            <Component {...pageProps} />
-          </LayoutComponent>
-        </ThemeProvider>
-      </IntlProvider>
+      <StyledEngineProvider injectFirst>
+        <IntlProvider locale='en' messages={intlEn} defaultLocale='en'>
+          <ThemeProvider theme={theme}>
+            <LayoutComponent>
+              <Component {...pageProps} />
+            </LayoutComponent>
+          </ThemeProvider>
+        </IntlProvider>
+      </StyledEngineProvider>
     </Container>
   );
 };

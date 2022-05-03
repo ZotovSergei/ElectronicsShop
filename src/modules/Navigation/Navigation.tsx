@@ -6,9 +6,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import useOpen from "utils/hooks/useOpen";
 
 const Navigation = () => {
-  const { isDesktop, isTablet } = useDeviceType();
+  const { isDesktop } = useDeviceType();
   const { isOpen, toggle } = useOpen();
-  console.log(isOpen);
+
   return (
     <StyledGrid
       container
@@ -23,7 +23,7 @@ const Navigation = () => {
             <MenuIcon />
           </IconButton>
           <StyledLogo intlId='common.logo' />
-          <StyledDrawer open={isOpen} $isTablet={isTablet}>
+          <StyledDrawer open={isOpen} onBlur={toggle} transitionDuration={500}>
             <Tabs />
           </StyledDrawer>
         </>
