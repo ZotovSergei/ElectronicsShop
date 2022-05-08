@@ -38,7 +38,10 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const LayoutComponent = getLayout(Component.config?.Layout || "") ?? <></>;
   const theme = useCustomTheme(Component.config?.Theme);
   return (
-    <Container disableGutters={Component.config?.disableGutters ?? false}>
+    <Container
+      maxWidth={false}
+      disableGutters={Component.config?.disableGutters ?? false}
+    >
       <StyledEngineProvider injectFirst>
         <IntlProvider locale='en' messages={intlEn} defaultLocale='en'>
           <ThemeProvider theme={theme}>

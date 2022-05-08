@@ -37,4 +37,8 @@ const Navigation = () => {
   );
 };
 
+Navigation.config = {
+  disableGutters: false,
+};
+
 export default Navigation;
