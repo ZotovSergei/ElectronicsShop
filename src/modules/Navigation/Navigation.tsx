@@ -1,36 +1,15 @@
 import { IconButton } from "@mui/material";
 import { Tabs } from "components";
 import useDeviceType from "utils/hooks/useDeviceType";
-import { ITabs } from "utils/typings";
-import { StyledGrid, StyledLogo } from "./styled";
+import { StyledGrid, StyledLogo, StyledDrawer } from "./styled";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Routes } from "utils/enums/route";
-
-const tabs: ITabs[] = [
-  {
-    value: Routes.Home,
-    labelIntlId: "navigation.home",
-  },
-  {
-    value: Routes.Laptops,
-    labelIntlId: "navigation.laptops",
-  },
-  {
-    value: Routes.SmartPhones,
-    labelIntlId: "navigation.smartPhones",
-  },
-  {
-    value: Routes.Tablets,
-    labelIntlId: "navigation.tablets",
-  },
-  {
-    value: Routes.SmartWatches,
-    labelIntlId: "navigation.smartWatches",
-  },
-];
+import useOpen from "utils/hooks/useOpen";
 
 const Navigation = () => {
   const { isDesktop } = useDeviceType();
+  const { isOpen, toggle } = useOpen();
+  const TRANSMIT_DURATION = 400;
+
   return (
     <StyledGrid
       container
@@ -38,17 +17,28 @@ const Navigation = () => {
       alignItems='center'
     >
       {isDesktop ? (
-        <Tabs tabs={tabs} />
+        <Tabs />
       ) : (
         <>
-          <IconButton>
+          <IconButton onClick={toggle}>
             <MenuIcon />
           </IconButton>
           <StyledLogo intlId='common.logo' />
+          <StyledDrawer
+            open={isOpen}
+            onBlur={toggle}
+            transitionDuration={TRANSMIT_DURATION}
+          >
+            <Tabs />
+          </StyledDrawer>
         </>
       )}
     </StyledGrid>
   );
+};
+
+Navigation.config = {
+  disableGutters: false,
 };
 
 export default Navigation;

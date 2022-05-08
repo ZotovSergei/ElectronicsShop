@@ -6,6 +6,7 @@ const SmartPhones = () => {
 
 SmartPhones.config = {
   Theme: themeSmartPhones,
-  disableGutters: true,
+  disableGutters: false,
 };
+
 export default SmartPhones;

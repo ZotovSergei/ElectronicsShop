@@ -1,13 +1,38 @@
 import { Tab, Tabs as MuiTabs } from "@mui/material";
 import { Typography } from "components/Typography";
 import { useRouter } from "next/router";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes } from "utils/enums/route";
-import { i18nKeys, ListTabs } from "utils/typings";
+import useDeviceType from "utils/hooks/useDeviceType";
+import { i18nKeys, ITabs } from "utils/typings";
 
-const Tabs: FC<ListTabs> = ({ tabs }) => {
+const tabs: ITabs[] = [
+  {
+    value: Routes.Home,
+    labelIntlId: "navigation.home",
+  },
+  {
+    value: Routes.Laptops,
+    labelIntlId: "navigation.laptops",
+  },
+  {
+    value: Routes.SmartPhones,
+    labelIntlId: "navigation.smartPhones",
+  },
+  {
+    value: Routes.Tablets,
+    labelIntlId: "navigation.tablets",
+  },
+  {
+    value: Routes.SmartWatches,
+    labelIntlId: "navigation.smartWatches",
+  },
+];
+
+const Tabs = () => {
   const [selectedTab, setSelectedTab] = useState<string>(Routes.Home);
   const router = useRouter();
+  const { isPhone, isTablet } = useDeviceType();
 
   const handleChange = (event: React.SyntheticEvent, value: string) => {
     setSelectedTab(value);
@@ -37,6 +62,7 @@ const Tabs: FC<ListTabs> = ({ tabs }) => {
       textColor='secondary'
       indicatorColor='secondary'
       aria-label='secondary tabs example'
+      orientation={isTablet || isPhone ? "vertical" : "horizontal"}
     >
       {listTabs}
     </MuiTabs>
