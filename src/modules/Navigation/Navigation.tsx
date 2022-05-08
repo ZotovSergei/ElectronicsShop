@@ -8,6 +8,7 @@ import useOpen from "utils/hooks/useOpen";
 const Navigation = () => {
   const { isDesktop } = useDeviceType();
   const { isOpen, toggle } = useOpen();
+  const TRANSMIT_DURATION = 400;
 
   return (
     <StyledGrid
@@ -23,7 +24,11 @@ const Navigation = () => {
             <MenuIcon />
           </IconButton>
           <StyledLogo intlId='common.logo' />
-          <StyledDrawer open={isOpen} onBlur={toggle} transitionDuration={500}>
+          <StyledDrawer
+            open={isOpen}
+            onBlur={toggle}
+            transitionDuration={TRANSMIT_DURATION}
+          >
             <Tabs />
           </StyledDrawer>
         </>

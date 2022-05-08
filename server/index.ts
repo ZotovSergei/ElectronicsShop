@@ -4,8 +4,7 @@ import { parse } from "url";
 import next from "next";
 
 const dev = process.env.NODE_ENV !== "production";
-console.log("dev", dev);
-console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+
 const hostname = "localhost";
 const port = 3000;
 // when using middleware `hostname` and `port` must be provided below
@@ -28,11 +27,13 @@ app.prepare().then(() => {
         await handle(req, res, parsedUrl);
       }
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error("Error occurred handling", req.url, err);
       res.statusCode = 500;
       res.end("internal server error");
     }
   }).listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`> Ready on http://${hostname}:${port}`);
   });
 });
