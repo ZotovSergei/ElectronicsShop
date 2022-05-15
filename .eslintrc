@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "react", "formatjs"],
   "env": {
     "node": true,
     "commonjs": true,
@@ -22,11 +22,18 @@
     "prettier"
   ],
   "rules": {
+    "eqeqeq": "error",
+    "no-console": "error",
+    "formatjs/no-offset": "error",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ]
   }
 }

@@ -5,3 +5,7 @@ export { TabPanel } from "./TabPanel";
 export { Typography } from "./Typography";
 export { Grid } from "./Grid";
 export { AppBar } from "./AppBar";
+export { Drawer } from "./Drawer";
+export { Sidebar } from "./Sidebar";
+export { List } from "./List";
+export { Divider } from "./Divider";

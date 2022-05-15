@@ -1,0 +1,6 @@
+{
+  "ignore": ["node_modules", ".next"],
+  "watch": ["server/**/*"],
+  "ext": "js json",
+  "exec": "NODE_DEV=development ts-node server/index.ts"
+}
