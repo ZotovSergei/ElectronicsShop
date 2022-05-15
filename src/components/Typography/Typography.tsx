@@ -6,13 +6,13 @@ interface Props extends TypographyProps {
   intlId?: i18nKeys;
 }
 
-const Typography: FC<Props> = ({ intlId, ...muiProps }) => {
+const Typography: FC<Props> = ({ intlId, children, ...muiProps }) => {
   return intlId ? (
     <MuiTypography {...muiProps}>
       <FormattedMessage id={intlId} />
     </MuiTypography>
   ) : (
-    <MuiTypography {...muiProps}>{intlId}</MuiTypography>
+    <MuiTypography {...muiProps}>{children}</MuiTypography>
   );
 };
 

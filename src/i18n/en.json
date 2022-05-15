@@ -5,5 +5,9 @@
   "navigation.smartPhones": "Smartphones",
   "navigation.home": "Home",
   "aboutUs": "About Us",
-  "common.logo": "Electronic Shops"
+  "common.logo": "Electronic Shops",
+  "sidebar.filters.title": "Filters",
+  "sidebar.common.filters.screenSize": "Screen",
+  "sidebar.common.filters.processors": "Processors",
+  "sidebar.common.filters.systemVersion": "Version"
 }
